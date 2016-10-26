@@ -12,10 +12,10 @@ VERSION := $(AICP_VERSION_MAJOR).$(AICP_VERSION_MINOR)$(AICP_VERSION_MAINTENANCE
 
 ifndef AICP_BUILDTYPE
     ifdef RELEASE_TYPE
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^AICP_||g')
+        RELEASE_TYPE := mordiford
         AICP_BUILDTYPE := $(RELEASE_TYPE)
     else
-        AICP_BUILDTYPE := UNOFFICIAL
+        AICP_BUILDTYPE := mordiford
     endif
 endif
 
@@ -29,31 +29,20 @@ ifdef AICP_BUILDTYPE
     ifeq ($(AICP_BUILDTYPE), EXPERIMENTAL)
         AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-EXPERIMENTAL-$(shell date -u +%Y%m%d)
     endif
-    ifeq ($(AICP_BUILDTYPE), UNOFFICIAL)
-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-UNOFFICIAL-$(shell date -u +%Y%m%d)
+    ifeq ($(AICP_BUILDTYPE), mordiford)
+        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-mordiford-$(shell date -u +%Y%m%d)
     endif
 else
 #We reset back to UNOFFICIAL
-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-UNOFFICIAL-$(shell date -u +%Y%m%d)
+        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-mordiford-$(shell date -u +%Y%m%d)
 endif
 
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.modversion=$(AICP_VERSION) \
-    ro.aicp.version=$(VERSION)-$(AICP_BUILDTYPE)
-
-# needed for statistics
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.aicp.branch=$(AICP_BRANCH) \
-    ro.romstats.url=http://stats.aicp-rom.com/ \
-    ro.romstats.name=AICP \
-    ro.romstats.buildtype=$(AICP_BUILDTYPE) \
-    ro.romstats.version=$(VERSION) \
-    ro.romstats.tframe=1 \
-    ro.romstats.askfirst=1 \
-    ro.romstats.ga=UA-48128535-2
+    ro.aicp.version=$(VERSION)-mordiford
 
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.camera-sound=1
+    persist.sys.camera-sound=0
