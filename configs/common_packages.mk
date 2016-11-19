@@ -23,7 +23,6 @@ PRODUCT_PACKAGES += \
     AudioFX \
     CMFileManager \
     CMSettingsProvider \
-    Eleven \
     Jelly \
     ExactCalculator \
     LockClock \
@@ -37,7 +36,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AicpExtras \
     BasicDreams \
-    Browser2 \
     LatinImeDictionaryPack \
     LatinIME \
     librs_jni \
