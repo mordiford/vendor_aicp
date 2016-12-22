@@ -12,10 +12,10 @@ VERSION := $(AICP_VERSION_MAJOR).$(AICP_VERSION_MINOR)$(AICP_VERSION_MAINTENANCE
 
 ifndef AICP_BUILDTYPE
     ifdef RELEASE_TYPE
-        RELEASE_TYPE := mordiford
+        RELEASE_TYPE := yukkarin
         AICP_BUILDTYPE := $(RELEASE_TYPE)
     else
-        AICP_BUILDTYPE := mordiford
+        AICP_BUILDTYPE := yukkarin
     endif
 endif
 
@@ -29,19 +29,19 @@ ifdef AICP_BUILDTYPE
     ifeq ($(AICP_BUILDTYPE), EXPERIMENTAL)
         AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-EXPERIMENTAL-$(shell date -u +%Y%m%d)
     endif
-    ifeq ($(AICP_BUILDTYPE), mordiford)
-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-mordiford-$(shell date -u +%Y%m%d)
+    ifeq ($(AICP_BUILDTYPE), yukkarin)
+        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-yukkarin-$(shell date -u +%Y%m%d)
     endif
 else
 #We reset back to UNOFFICIAL
-        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-mordiford-$(shell date -u +%Y%m%d)
+        AICP_VERSION := $(TARGET_PRODUCT)_$(AICP_BRANCH)-$(VERSION)-yukkarin-$(shell date -u +%Y%m%d)
 endif
 
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.modversion=$(AICP_VERSION) \
-    ro.aicp.version=$(VERSION)-mordiford
+    ro.aicp.version=$(VERSION)-yukkarin
 
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
