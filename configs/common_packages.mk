@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     LockClock \
+    SlimOTA \
     Trebuchet \
     WallpaperPicker \
     WeatherProvider \
