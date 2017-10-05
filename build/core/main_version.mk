@@ -1,7 +1,7 @@
 # AICP System Version
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.modversion=$(AICP_VERSION) \
-    ro.aicp.version=$(VERSION)-$(AICP_BUILDTYPE) \
+    ro.aicp.version=$(VERSION)-mordiford \
     ro.aicp.version.update=$(AICP_BRANCH)-$(VERSION)
 
 # AICP Statistics
@@ -9,7 +9,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
     ro.aicp.branch=$(AICP_BRANCH) \
     ro.romstats.url=http://stats.aicp-rom.com/ \
     ro.romstats.name=AICP \
-    ro.romstats.buildtype=$(AICP_BUILDTYPE) \
+    ro.romstats.buildtype=mordiford \
     ro.romstats.version=$(VERSION) \
     ro.romstats.tframe=1 \
     ro.romstats.askfirst=1 \
