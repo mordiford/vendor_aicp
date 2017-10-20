@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
 # Custom AICP packages
 PRODUCT_PACKAGES += \
     AicpExtras \
-    AICP_OTA
+    AICP_OTA \
+    OmniSwitch
 
 # Exchange support
 PRODUCT_PACKAGES += \
